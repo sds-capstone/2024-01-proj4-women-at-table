@@ -2,33 +2,30 @@
 title: "Phase 1 Term Paper"
 author: "Charavee Basnet Chettri, Betty Pu, Vivian Wei, Ziyue Yang"
 date: "2024-02-21"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
+subtitle: 'Group #4 Women at the Table'
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Introduction & Motivation
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+In the realm of financial inclusion, the accessibility of emergency funds plays a pivotal role in determining an individual's financial stability and resilience, especially in developing countries. In this project, our goal is to predict how likely it is for people in Sub-Saharan African countries to have access to emergency funds within a short time (usually 30 days) if they have unexpected financial needs. This prediction serves as a crucial factor in determining the eligibility of individuals for loans and financial assistance.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+The significance of this problem lies within its direct impact on the economic well-being and empowerment of individuals in developing regions. According to the Global Financial Inclusion (Global Findex) Database 2021 published by the World Bank, only about half of adults in developing economies could access extra funds within 30 days if faced with unexpected expenses. Therefore, there is a pressing need to understand the factors influencing this accessibility. By delving into this issue, we not only contribute to enhancing financial inclusion but also aid in mitigating the different effects of financial shocks on vulnerable populations.
 
-```{r cars}
-summary(cars)
-```
+**What is fairness?**
 
-## Including Plots
+Defining fairness is essential in the context of data science. In this case, fairness encompasses three key aspects: individual fairness, group fairness, and causal fairness. Individual fairness focuses on preventing discrimination against individuals with similar relevant characteristics. This means ensuring that individuals in similar situations receive similar outcomes from the model, regardless of irrelevant factors. Group fairness aims to prevent disparities in outcomes for different groups. This ensures equal opportunities for all groups, regardless of their membership. Causal fairness goes beyond simply observing disparities and delves into understanding their underlying causes. It seeks to mitigate these root causes to achieve fair outcomes within and across groups.
 
-You can also embed plots, for example:
+**Previous Attempts**
 
-```{r pressure, echo=FALSE}
-```
+Previous attempts at addressing this challenge have often relied on traditional statistical methods and over-simplified models that fail to capture the intricacies of the underlying data. Our previous colleagues conducted analysis using the <AI & Equality> Human Rights Toolbox and used a Decision Tree Classifier machine learning model implemented via Python to predict access to emergency funds with 68% accuracy. Their work laid a solid foundation by exploring demographic and financial variables within the dataset, and assessed the fairness of the decision tree classifier, particularly concerning gender bias, and then applied various processing techniques to enhance the fairness of the model. 
 
+**Our Goal**
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Based on their work, our group aims to incorporate synthetic data to rebalance the dataset, ensuring equitable representations amongst both genders in the dataset. Our approach aims to mitigate the disparaties the previous colleagues found out in the decision tree’s classifier’s predictions and promote fairness in predicting access to emergency funds in south-Saharan Africa countries. 
