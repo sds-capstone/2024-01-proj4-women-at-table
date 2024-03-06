@@ -35,8 +35,11 @@
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \hypersetup{
-  pdftitle={Title here},
-  pdfkeywords={, that do not appear in the title},
+  pdftitle={Maximizing Fairness with Synthetic data: Access to Emergency Fund in Sub-Saharan Africa},
+  pdfkeywords={Fairness; predictive machine learning; emergency funds;
+financial inclusion; ethics; gender bias; debiasing; synthetic data;
+Sub-Saharan Africa; fairness metrics; Global Financial Inclusion
+Database},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
@@ -53,13 +56,21 @@
 
 \if0\blind
 {
-  \title{\bf Title here}
+  \title{\bf Maximizing Fairness with Synthetic data: Access to
+Emergency Fund in Sub-Saharan Africa}
 
   \author{
-        Author 1 \thanks{The authors gratefully acknowledge \ldots{}} \\
-    Department of YYY, University of XXX\\
-     and \\     Author 2 \\
-    Department of ZZZ, University of WWW\\
+        Charavee Basnet Chettri \\
+    \\
+     and \\     Vivian Wei \\
+    \\
+     and \\     Betty Pu \\
+    \\
+     and \\     Ziyue Yang \thanks{We are grateful to the Women at the
+Table team and Sofia Kypraiou for the project inspiration and suggesting
+the path forward} \\
+    Department of Statistical and Data Sciences, Smith College,
+Northampton MA\\
       }
   \maketitle
 } \fi
@@ -70,7 +81,8 @@
   \bigskip
   \bigskip
   \begin{center}
-    {\LARGE\bf Title here}
+    {\LARGE\bf Maximizing Fairness with Synthetic data: Access to
+Emergency Fund in Sub-Saharan Africa}
   \end{center}
   \medskip
 } \fi
@@ -94,7 +106,10 @@ reducing disparities in access to essential financial resources.
 \end{abstract}
 
 \noindent%
-{\it Keywords:} , that do not appear in the title
+{\it Keywords:} Fairness; predictive machine learning; emergency funds;
+financial inclusion; ethics; gender bias; debiasing; synthetic data;
+Sub-Saharan Africa; fairness metrics; Global Financial Inclusion
+Database
 
 \vfill
 
@@ -106,37 +121,42 @@ reducing disparities in access to essential financial resources.
 
 In the realm of financial inclusion, the accessibility of emergency
 funds plays a pivotal role in determining an individual's financial
-stability and resilience, especially in developing countries. In this
-project, our goal is to predict the possibility for people in
-Sub-Saharan African countries to come up with emergency funds, defined
-as 1/20 of GNI per capita in local currency, within a 30-day period.
-This prediction serves as a crucial factor for establishing future
-public financial policies, such as determining the eligibility of
-individuals for loans and financial assistance. The significance of this
-problem lies within its direct impact on the economic well-being and
-empowerment of individuals in developing regions. According to the
-Global Financial Inclusion (Global Findex) Database 2021 published by
-the World Bank, only a little over half of people over 15 years of age
-in developing economies could access extra funds within 30 days if faced
-with unexpected expenses. Therefore, there is a pressing need to
-understand the factors influencing this accessibility and eliminate
-inherent bias in the dataset. By delving into this issue, we not only
-contribute to enhancing financial inclusion but also aid in mitigating
-the different effects of financial shocks on vulnerable populations.
+stability and resilience, especially in developing
+countries.\citep{10.1093/oso/9780198827535.003.0007} In this project,
+our goal is to predict the possibility for people in Sub-Saharan African
+countries to come up with emergency funds, defined as 1/20 of GNI per
+capita in local currency, within a 30-day
+period\citep[@][]{Demirguc-Kunt2022}. This prediction serves as a
+crucial factor for establishing future public financial policies, such
+as determining the eligibility of individuals for loans and financial
+assistance. The significance of this problem lies within its direct
+impact on the economic well-being and empowerment of individuals in
+developing regions. According to the
+\href{https://www.worldbank.org/en/publication/globalfindex}{Global
+Financial Inclusion (Global Findex) Database 2021} published by the
+World Bank, only a little over half of people over 15 years of age in
+developing economies could access extra funds within 30 days if faced
+with unexpected expenses \citep{Demirguc-Kunt2022}. Therefore, there is
+a pressing need to understand the factors influencing this accessibility
+and eliminate inherent bias in the dataset. By delving into this issue,
+we not only contribute to enhancing financial inclusion but also aid in
+mitigating the different effects of financial shocks on vulnerable
+populations.
 
 Defining fairness is essential since the concept itself is relative
 among different people. In the data science discourse, fairness
 encompasses three key aspects: individual fairness, group fairness, and
-causal fairness. Individual fairness focuses on preventing
-discrimination against individuals with similar relevant
+causal fairness\citep{Kypraiou2021What}. Individual fairness focuses on
+preventing discrimination against individuals with similar relevant
 characteristics. This means ensuring that individuals in similar
 situations receive similar outcomes from the model, regardless of
-irrelevant factors. Group fairness aims to prevent disparities in
-outcomes for different groups. This ensures equal opportunities for all
-groups, regardless of their membership. Causal fairness goes beyond
+irrelevant factors\citep{10.1145/3461702.3462621}. Group fairness aims
+to prevent disparities in outcomes for different groups. This ensures
+equal opportunities for all groups, regardless of their
+membership\citep{10.1145/3442188.3445876}. Causal fairness goes beyond
 simply observing disparities and delves into understanding their
 underlying causes. It seeks to mitigate these root causes to achieve
-fair outcomes within and across groups.
+fair outcomes within and across groups\citep{plecko2022causal}.
 
 Our previous colleagues conducted analysis using the \textless AI \&
 Equality\textgreater{} Human Rights Toolbox and used a Decision Tree
@@ -145,7 +165,7 @@ access to emergency funds with 68\% accuracy. Their work laid a solid
 foundation by exploring demographic and financial variables within the
 dataset, and assessed the fairness of the decision tree classifier,
 particularly concerning gender bias, and then applied various processing
-techniques to enhance the fairness of the model.
+techniques to enhance the fairness of the model\citep{Porta2022}.
 
 Based on their work, our group aims to incorporate synthetic data to
 rebalance the dataset, ensuring equitable representations amongst both
@@ -153,16 +173,8 @@ genders in the dataset. Our approach aims to consider a broader
 selection of machine learning algorithms and mitigate the disparities
 the previous colleagues found in the decision tree's classifier's
 predictions and enhance fairness with synthetic data, ultimately better
-predict access to emergency funds in south-Saharan Africa countries.
-
-\section{Verifications}
-\label{sec:verify}
-
-This section will be just long enough to illustrate what a full page of
-text looks like, for margins and spacing.
-
-\citet{Campbell02} \citeauthor{Schubert13}
-\citetext{\citeyear{Schubert13}; \citealp{Chi81}}
+predict access to emergency funds in south-Saharan Africa
+countries\citep{SyntheticDataAIEquality}.
 
 \bibliographystyle{plain}
 \bibliography{bibliography.bib}
