@@ -95,12 +95,18 @@ In order to continue assessing and enhancing the fairness of the machine learnin
 
 The data was constructed through a series of surveys carried out by Gallup, Inc in association with the annual Gallup World Poll. They randomly sampled 1000 individuals from each country and asked them to respond to a survey either over the phone or in-person. The target population is the civilian, non-institutionalized population 15 years and above. In consistency with the former colleagues, our sample covers only the Sub-Saharan region (35 countries total), thus there are 35,000 total observations and 105 total variables. Since the sampling was random and the sample size is large, we can assume that our sample is representative of the total population of people living in the 35 Sub-Saharan countries in the data. The data was collected directly from individuals over the 2017 calendar year and is self-contained, meaning it does not rely on any external resources.
 
-After basic data cleaning, we have created various visualizations to help understand who is in the data and acknowledge potential sources of bias within the data. 
+After basic data cleaning, we created a basic summary statistics table with the mean and standard deviations of each variable.
 
-``` {r,echo=FALSE, fig.show='hold', out.width='40%'}
-  knitr::include_graphics('graphs/var1_graph.jpeg') 
-  knitr::include_graphics('graphs/var2_graph.jpeg')
+```{r echo=FALSE}
+# Read the CSV file
+summary_stats <- read.csv("summary_statistics.csv")
+
+# Display the data
+knitr::kable(summary_stats, caption = "Summary Statistics")
 ```
+
+
+We also created various visualizations to help understand who is in the data and acknowledge potential sources of bias within the data. 
 
 ## *Outcome Variable of Interest: Access to Emergency Fund (Fin24)*
 
