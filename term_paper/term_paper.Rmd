@@ -95,8 +95,6 @@ In order to continue assessing and enhancing the fairness of the machine learnin
 
 The data was constructed through a series of surveys carried out by Gallup, Inc in association with the annual Gallup World Poll. They randomly sampled 1000 individuals from each country and asked them to respond to a survey either over the phone or in-person. The target population is the civilian, non-institutionalized population 15 years and above. In consistency with the former colleagues, our sample covers only the Sub-Saharan region (35 countries total), thus there are 35,000 total observations and 105 total variables. Since the sampling was random and the sample size is large, we can assume that our sample is representative of the total population of people living in the 35 Sub-Saharan countries in the data. The data was collected directly from individuals over the 2017 calendar year and is self-contained, meaning it does not rely on any external resources.
 
-## Variable Definition and Descriptions
-
 After basic data cleaning, we have created various visualizations to help understand who is in the data and acknowledge potential sources of bias within the data. 
 
 ``` {r,echo=FALSE, fig.show='hold', out.width='40%'}
@@ -104,7 +102,7 @@ After basic data cleaning, we have created various visualizations to help unders
   knitr::include_graphics('graphs/var2_graph.jpeg')
 ```
 
-### *Outcome Variable of Interest: Access to Emergency Fund (Fin24)*
+## *Outcome Variable of Interest: Access to Emergency Fund (Fin24)*
 
 The variable “Fin24” in the dataset asked participants the question: Now, imagine that you have an emergency and you need to pay [1/20 of GNI per capita in local currency]. Is it possible or not possible that you could come up with [1/20 of GNI per capita in local currency] within the NEXT MONTH? In order to make it more straightforward for interpretations, we restrict the response into a binary variable for Yes and No. The overall distribution of access to emergency funds showed 17, 599 individuals had access to emergency funds while 14342 did not. This indicates that over half of individuals represented in the data do not have access to emergency funds.
 
@@ -112,7 +110,7 @@ To help conceptually understand how the outcome variables might vary among diffe
 ``` {r, out.width='70%', fig.align='center', fig.cap='Distribution of having emergency fund', echo=FALSE}
      knitr::include_graphics('graphs/f24_graph1.png') 
 ```
-
+## Demographics
 ### *Protected Attribute of Focus: Gender (female)*
 
 The variable “female” distinguishes gender. There are 12108 females and 11663 males in the dataset. It appears to have a fair distribution between different genders for the dataset as a whole. 
@@ -174,5 +172,113 @@ While looking at the outcome variable of interest broken down by country and gen
 ```
 
 We iterate the visualizations for each main financial variable of interest in the dataset by gender, by gender and economy, and by gender and education level, to check if there’s recurring discrepancy among genders. Due to the page constraints, we decide to not include all visualizations and attach our Jupyter Notebook ([link](https://drive.google.com/file/d/1f9AauOn4I2Rl5io_viMw0WbEXKFiJcRA/view?usp=sharing)) for reference.
+
+## Financial Variables
+
+We describe financial variables that are likely to have an impact on access to emergency fund in the following section.
+
+### *Has a debit card (fin2)*
+
+The variable “fin2” inquired whether participants possessed “a card connected to an account at a financial institution that allows immediate withdrawals of money.” We posit that this variable correlates with the outcome, as a debit card serves both saving and withdrawal purposes, closely intertwining with income accumulation. The absence of a debit card signifies a lack of savings and financial stability, potentially hindering the ability to build emergency funds. Among all participants, 4,588 individuals own a debit card, while 19,183 individuals do not, surpassing the number of cardholders by more than five times. Despite this significant difference, the distribution by gender indicates a relatively similar percentage of males and females owning a debit card. This suggests no conspicuous imbalance in debit card ownership between genders.
+
+### *Has a credit card (fin7)*
+
+The variable “fin7” asked whether participants possessed “a card that allows borrowing to make payments and pay the balance off later.” We hypothesize that this variable correlates with the outcome, as a credit card facilitates immediate access to funds during emergencies and provides flexible repayment options. Notably, only 1,100 individuals, comprising less than 5% of all participants, own a credit card. Despite this contrast, the distribution by gender reveals a relatively similar percentage of males and females owning a credit card. This implies no apparent gender-based imbalance in credit card ownership.
+
+### *Saved for farm/business purposes in the past 12 months (fin15)*
+The variable “fin15” asks whether respondents saved money to “start, operate, or grow a business or farm in the past 12 months.” We propose that this variable may correlate with the outcome, as saving for business or farm endeavors suggests a proactive approach towards entrepreneurship or agricultural ventures. Among all participants, 5,131 individuals saved money for business or farm purposes, while 18,640 individuals did not. Examining the gender composition, there is a slightly larger percentage of males who engaged in saving for business or farm compared to females. This observation suggests a gender difference in the inclination to save for entrepreneurial or agricultural pursuits within the surveyed population (5%).
+
+### *Saved for old age in the past 12 months (fin16)*
+The variable “fin16” inquires whether respondents saved money for old age in the past 12 months. We propose that this variable may correlate with the outcome, as saving for old age reflects a forward-thinking approach to financial planning and retirement readiness. Among all participants, only 2,810 individuals, constituting a distinct subset, saved money for old age, while 20,961 individuals did not. Analyzing the gender composition, there is a slightly larger percentage of males who engaged in saving for old age compared to females (3.6%). This observation resonates with the trend identified in the variable fin15. These findings collectively suggest a gender difference in the propensity to save for specific financial goals within the surveyed population.
+
+### *Has loan from a financial institution for home, apartment, or land (fin19)*
+The variable ‘fin19’ signifies whether a respondent by themself or with someone else currently has a loan that they took out from a bank or another type of formal financial institution to purchase a home, apartment or land. We suspect that the ability to access emergency funds would be impeded by having a loan, because a part of the income would have to be channeled towards repayment. On the other hand, an unspent loan amount could become an emergency fund. In our random sample, 22,325 respondents did not have a loan from a financial institution for a home, apartment, or land, whereas only 1,446 respondents did. In terms of the gender composition, of the respondents who had a loan, there is a slightly larger percentage of males by 2.3% compared to females. 
+
+### *Borrowed in past 12 months: for medical purposes (fin20)*
+The variable ‘fin20’ signifies whether a respondent by themself or together with someone else has borrowed money for health or medical purposes in the last 12 months. We suspect that the ability to access emergency funds would be impeded by having borrowed, because a part of the income would have to be channeled towards repayment. Moreover, since the respondent is borrowing for medical purposes, their productivity to generate emergency funds could be argued due to potential illness. In our random sample, 19,670 respondents had not borrowed for medical purposes, whereas only 4,101 respondents did. In terms of the gender composition in the respondents who had borrowed, there is a slightly larger percentage of males by 1% compared to females. 
+
+### *Borrowed for farm/business purposes in past 12 months (Fin21)*
+The variable ‘fin21’ signifies whether a respondent by themself or together with someone else has borrowed money to start, operate, or grow a business or farm in the last 12 months. Similar to our argument for Fin20, we suspect that the ability to access emergency funds would be impeded by having borrowed, because a part of the income would have to be channeled towards repayment. In our random sample, 20,963 respondents had not borrowed for medical purposes, whereas only 2,808 respondents did. In terms of the gender composition in the respondents who had borrowed, there is a slightly larger percentage of males by 2.9% compared to females. 
+
+### *Sent domestic remittances in past 12 months (Fin26)*
+The variable ‘fin26’ signifies whether a respondent has personally given or sent money to a relative or friend living in a different city or area inside the country in the past 12 months. The money can be given or sent for any reason, and can be money that the respondent brought or sent in some other way. We suspect that the ability to access emergency funds would be encouraged by having voluntarily sent domestic remittances. We hypothesize that the sender of remittances would be less able to access emergency funds given the outflow of their money. In our random sample, 15,923 respondents had not borrowed for medical purposes, whereas only 7,848 respondents did. In terms of the gender composition in the respondents who had sent domestic remittances, there is a larger percentage of males by approximately 9% compared to females. 
+
+### *Received Domestic Remittance in the past 12 months (fin28)*
+The variable ‘fin28’ asks whether the respondent has received money from a relative or friend living in a different city or area within the country where the survey is conducted, excluding payments for goods and services, in the past 12 months, requiring a "Yes" or "No" response. We believe that this variable is correlated with the outcome variable because this variable provides insight into the respondent's potential support network and access to financial resources that could be utilized in case of an emergency. In our random sample, 8,803 respondents received domestic remittance in the past 12 months while 14698 respondents did not. In the graph, slightly more male respondents received domestic remittances compared to females (~2%). 
+
+### *Received Government Transfer in the past 12 months (fin37)*
+The variable "fin37" asks respondents whether they have personally received any financial support from the government in the past 12 months, including payments for educational or medical expenses, unemployment benefits, subsidy payments, or any type of social benefits, excluding wages or work-related payments. This information is crucial as individuals who have received government financial support may have a higher likelihood of being able to access emergency funds, as they may have access to additional resources or assistance programs. In our random sample, only 1,981 respondents received government transfer, while 21,790 respondents did not. There’s no observable difference between male and female respondents (~0.5%). 
+
+### *Received Government Pension in the past 12 months (fin38)*
+The variable ‘fin38’ asks respondents whether they have personally received a pension from the government, military, or public sector in the past 12 months. It is highly related to the outcome variable as individuals receiving pensions may have a stable source of income that could contribute to their ability to access emergency funds. Therefore, the presence or absence of pension income may influence respondents' perceptions of their financial security and ability to meet emergency financial needs. In the random sample, only 1,085 respondents received government pension, while 22,686 respondents did not. There’s no observable difference between male and female respondents (~0.2%). 
+
+### *Having a national ID (fin48)*
+The variable ‘fin48’ asks respondents whether they own a national id of the country where the survey is conducted. The possession of a national ID can significantly impact individuals' access to financial services, eligibility for government assistance programs, and employment opportunities. Having a national ID may facilitate the process of obtaining emergency funds by providing access to formal financial institutions, qualifying for social benefits, and streamlining identity verification for transactions, thereby influencing the respondent's ability to meet emergency financial needs within the next month. In the random sample, 72% of respondents owns a national ID of the country where the survey is conducted. There’s an observable 10% difference between male and females, where 10% more males owns a national ID. 
+
+### *Paid utility bills in past 12 months (fin30)*
+The variable “fin30” asked the participants if they have “personally, made regular payments for electricity, water, OR trash collection?” We believe this variable is correlated with the outcome since utility bills are typically recurring expenses that are essential for maintaining basic needs. If someone struggles to pay their utility bills, it could indicate that they are living paycheck to paycheck or facing financial strain. In such situations, they may not have the financial flexibility to save for emergencies. In our data, only 9,175 individuals paid utility bills while 22,766 did not. However when we look at the breakdown by gender, male and female have approximately equal proportions which suggest that genders may not directly affect the distribution for the variable. 
+
+### *Received Wage Payment (fin32)*
+The variable “fin32” asked the participants if they have “...received any money from an EMPLOYER, in the form of SALARY OR WAGES, for doing work in the PAST 12 MONTHS?” We believe this variable could be necessary for the model because receiving wage payments is one important source of saving for emergency funds. Only 6063 individuals receive wage payments while 17708 do not.There’s a visible 10% difference between Male receiving wage payments compared to Female. 
+
+### *Own a Mobile Phone (mobileowner)*
+The variable “mobileowner” is a binary variable where 1 means owns a mobile phone and 0 otherwise. We believe this variable should be included for fitting the model because having a mobile phone enables individuals to quickly reach out for help or access important financial resources, such as online banking or emergency assistance services to address unexpected expenses promptly. The majority of the sample owns a mobile phone, and a slightly higher proportion among male participants.
+
+### *Received agricultural payments in past 12 months (fin42)*
+The variable “fin42” asked the participants if they have “...received money from any source for the sale of agricultural products, crops, produce, or livestock in the PAST 12 MONTHS?” We believe this variable could be necessary for the model because receiving agricultural payments is one important source of saving for emergency funds, especially for resource-intensive countries. In the sample, 6102 individuals receive agricultural payments while 17669 do not. There’s a slightly higher proportion of male receiving agricultural payments than females.
+
+# Summary
+Overall, our exploratory data analysis (EDA) reveals that there are disparities in the outcome variable access to emergency funds, most significantly with the protected attributes of gender. This choice is not meant to diminish the importance of the other demographic disparities that also have an influence on the access to emergency funds. Nonetheless, the visualizations above show how gender differences persist in all of these features. Therefore, we believe that choosing gender as our primary attribute and addressing the gender imbalance would potentially address the discrepancy we see in the other attributes. Future research could consider addressing multiple protected attributes. In terms of other financial variables, through these visualizations and analysis, we observe that gender differences are less of a concern than the outcome variable, with around an average of 5% or less difference, only with few exceptions like Fin 26 and Fin32 that have a more visible difference of 10%. This helps substantiate our future effort of artificially creating synthetic data that includes more “Yes” to female observations while randomly assigning values to other financial variables.
+
+Having identified the limitations in the data, our next step is to create a baseline machine learning model and assess the model with fairness metrics to determine the best model fit. After that, we aim to improve the model further with synthetic data to further minimize the bias.  
+
+# Methods
+For our project, we used the programming language Python on Jupyter Notebook. We collaborated through Google Colab, Google Drive and GitHub. To clean our data and make preliminary visualizations, we used the pandas, matplotlib, numpy packages. To explore chi correlation and logit regression for the statistical component of our EDA, we used statsmodels.api and chi2_contingency method from scipy.stats package. To explore different baseline machine learning models, we mainly used the sklearn packages to instantiate the models and construct the confucian matrices.
+
+## Exploratory Data Analysis (EDA)
+The EDA helps us understand who is represented in the data and aids in approaching our final research problem: understanding the factors contributing to an individual’s ability to access and/or generate emergency funds. 
+
+The data set has 105 variables. Hence, the first task at hand was to narrow down the pool of potential features of interest to our research problem and analysis. Firstly, we chose our demographic features of interest that were gender, education level, employment status, income quintile, and economy. These variables are synonymous to protected or sensitive attributes. As previously mentioned, an outcome (of an algorithm) is not considered fair or just, if they are determined mainly based on a protected attribute.  While reading the data description, we saw that some variables are follow-up questions to the previous variables. For example, “fin8” is only asked if the respondent has an account at a financial institution OR has a debit card in their name which is connected to an account. Due to its lack of response completion in those “sub-questions”, we filtered out variables where more than 25% of the entries were NA.  We then filtered out those that have unclear entries labels. For example, the variable “saved” and “borrowed” have unclear labels for its entry of 1 and 0. Although it may be reasonable to assume that 1 would indicate yes and 0 otherwise, we decided to exclude them for the current sprint.  Finally, we shortlisted our potential predictor down to 16 variables. We built on the previous group’s work by exploring countries for each of the 16 financial variables, because we wanted to see to what extent each variable had predictive power for the outcome variables. 
+
+After selecting a pool of features we were interested to explore, we standardized the data by re-coding it. In the survey, for specially financial features, respondents either answered ‘Yes’, ‘No’, ‘Don’t Know’ or ‘Refuse’. We filtered out ‘Don’t Know’ and ‘Refuse’ responses for our variables, because given the low proportion of those responses for a question, we were skeptical of overfitting and have little relevance to our research problem. After re-coding, every financial variable as well as the outcome are now binary, where 1 indicates yes to the survey questions and 0 indicates no. We want to mention that these steps are in agreement with the data cleaning methodology implemented by the previous colleagues. 
+
+We visualized the characteristics of the population included in the data, through multivariate bar-plots. For each of the features we chose, we created plots displaying the proportion of the respondents who said “Yes” or “No” for a financial variable, for example, fin2 (Owns a debit card) for gender, education level and country. We performed this analysis on all of our shortlisted variables of interest. The main aim of this approach to our EDA was to investigate any potential discrepancies between the responses of male and female, primary, secondary and tertiary education and each country. 
+
+After visualization, we decided to enhance our EDA with two statistical components. First, we ran logit regression with our binary outcome variable i.e. access to emergency funds. Our first regression specification in Fig EDA.1 shows that males have a 4.2 percentage points higher likelihood of having access to emergency funds than their female counterparts with statistical significance. This regression suffers from omitted variable bias (OVB) and we suspect that the impact of gender on access to emergency funds is underestimated. 
+
+``` {r, out.width='100%', fig.align='center', fig.cap='EDA Regression 1', echo=FALSE}
+     knitr::include_graphics('graphs/eda1.png')
+```
+
+In our second specification in Fig EDA.2 where we take into account the economy and education level features (which are the two other protected attributes that we explored), the likelihood of access to emergency funds is, on average, 34.75 percentage points higher for men with primary education from Benin than for comparable females with statistical significance. In other words, the reference category is an average male from Benin with primary education These results further emphasize that gender does have an impact on access to emergency funds where females are disadvantaged. Furthermore, these results emphasize that higher levels of education result in greater access of emergency funds with statistical significance, holding all else constant, which confirms our initial hypothesis.
+
+``` {r, out.width='100%', fig.align='center', fig.cap='EDA Regression 2', echo=FALSE}
+     knitr::include_graphics('graphs/eda2.png')
+```
+
+In our third specification in Fig EDA.3, we incorporate all the other financial features to control for them in the impact of gender on access to emergency funds and explore their impacts. We observe that unemployed men from Benin with primary education and in the first income quintile, on average, have a 14.45 percentage point higher likelihood than comparable females of access to emergency funds with statistical significance. Hence, we see that gender is still a statistically significant factor in determining access to emergency funds where females are disadvantaged. These logit regressions help to see that we may need to balance our data before training the algorithm that determines who gets access to a loan. 
+
+``` {r, out.width='100%', fig.align='center', fig.cap='EDA Regression 3', echo=FALSE}
+     knitr::include_graphics('graphs/eda3.png')
+```
+
+Second, we defined a function to analyze the correlation between the features in our dataset (with the help of this [Youtube video](https://www.youtube.com/watch?v=fzzUfa0-VsE)). Since the majority of the features are categorical variables, we had to employ the chi-squared test to evaluate the statistical significance of the correlation between variables. In other words, the function informed us whether there is a correlation or not. However, the function would not show the strength and direction of the correlation. Not having this information was a limitation to potentially selecting proxy variables. Nonetheless, the yes/no correlation output was intuitive as we tested the correlation between gender and access to emergency funds. The output supported the results from the logit regressions that gender does have an impact on the access to emergency funds.
+
+## Baseline Model
+In order to improve fairness of the dataset, we need to establish a baseline model to assess its performance before and after the inclusion of synthetic data. Previous group adopted a Decision Tree classification model over a logistic regression model because of its higher accuracy score. However, our group decided not to take their model as granted for two reasons. First, we took a slightly different approach in limiting our predictor variables. This means that our calculated accuracy score does not match entirely with theirs. Furthermore, the cross validations subsets vary based on different random generator seeding, thus it is unreliable to compare its model performance simply based on cross validation results of R-squared. Second, although comparing accuracy across different models is an industry convention, higher accuracy scores might not necessarily mean maximal fairness. A model could have high accuracy in predicting female’s access to emergency funds, but it might not be fair if females have consistently lower likelihood. 
+
+Thus, we believe that it is important to consider a broader range of classification machine learning models to ensure robustness and reliability in predicting access to emergency funds. We acknowledged that each model has its own strengths and weaknesses, and by evaluating a variety of models against our fairness metrics of choice, we can derive an optimal baseline model that not only is fair, but also has good accuracy and interpretability. We explore a total of 6 machine learning models and provides a brief explanation of each model below: 
+
+  1. Logistic Regression provides a simple and interpretable approach, suitable for understanding for binary classification in terms of probability. It works well with a large number of predictors and it is computationally efficient, but it only works best when modeling for linear relationships.
+  
+  2. K-Nearest Neighbors (KNN) leverages proximity-based classification which classifies instances based on the majority vote of their k nearest neighboring observation in the feature space.  It performs well in situations where the decision boundary is highly irregular or the data is not linearly separable, but it may be too computationally heavy, especially for large datasets. 
+  
+  3. Support Vector Machines (SVM) are effective for complex decision boundaries and can handle high-dimensional data well. Naive Bayes offers simplicity and efficiency, assuming independence between features, making it suitable for large datasets. 
+
+  4. Decision Trees provide intuitive decision-making processes, while Random Forests offer improved robustness and generalization by combining multiple decision trees.
+
+Going forward, we will compare across different machine models against our fairness metrics of choice as well as other performance metrics such as accuracy, precision, recall, F1 scores, support. We will also construct confucian matrix to visualize the extent of each model in successfully predicting true positives and true negatives for each sex. By Sprint 2, we will have chosen an optimal machine learning model to fit our current dataset and apply synthetic data. 
+
+
 
 
