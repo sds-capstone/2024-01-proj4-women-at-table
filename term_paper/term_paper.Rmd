@@ -1,20 +1,26 @@
 ---
-title: Title here
+title: Maximizing Fairness with Synthetic data: Access to Emergency Fund in Sub-Saharan Africa 
+
 
 # to produce blinded version set to 1
 blinded: 0
 
 authors: 
-- name: Author 1
-  thanks: The authors gratefully acknowledge ...
-  affiliation: Department of YYY, University of XXX
+- name: Charavee Basnet Chettri
+- name: Vivian Wei
+- name: Betty Pu
+- name: Ziyue Yang
+  thanks: The authors gratefully acknowledge Women at the Table team and the help from Sofia Kypraiou for the project inspiration and suggesting us the path forward.
+  affiliation: Department of Statistical and Data Sciences, Smith College, Northampton, MA
   
-- name: Author 2
-  affiliation: Department of ZZZ, University of WWW
-
 keywords:
-- 
-- that do not appear in the title
+- Financial inclusion
+- Sub-Saharan Africa
+- emergency funds
+- gender bias
+- Global Financial Inclusion Database
+- synthetic data
+- predictive machine learning
 
 abstract: |
   Financial inclusion is paramount for economic stability and resilience, particularly in diverse regions like Sub-Saharan Africa, spanning low to high-income countries and encompassing both resource-intensive and non-resource-intensive economies. This study focuses on a crucial aspect of financial resilience: the accessibility of emergency funds, defined as having access to 1/20 of Gross National Income (GNI) per capita in local currency within 30 days. Leveraging previous colleagues' exploratory work on the Global Financial Inclusion Database 2021, our objective is to mitigate inherent gender biases in the dataset by rebalancing it with synthetic data, thereby enhancing fairness in predicting emergency fund accessibility. Through predictive machine learning modeling, we aim to contribute to the economic empowerment of individuals in Sub-Saharan Africa, ultimately fostering resilience and reducing disparities in access to essential financial resources.
