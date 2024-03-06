@@ -174,3 +174,5 @@ While looking at the outcome variable of interest broken down by country and gen
 ```
 
 We iterate the visualizations for each main financial variable of interest in the dataset by gender, by gender and economy, and by gender and education level, to check if there’s recurring discrepancy among genders. Due to the page constraints, we decide to not include all visualizations and attach our Jupyter Notebook ([link](https://drive.google.com/file/d/1f9AauOn4I2Rl5io_viMw0WbEXKFiJcRA/view?usp=sharing)) for reference.
+
+
