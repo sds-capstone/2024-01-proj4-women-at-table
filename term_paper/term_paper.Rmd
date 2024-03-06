@@ -102,7 +102,7 @@ After basic data cleaning, we created a basic summary statistics table with the 
 summary_stats <- read.csv("summary_statistics.csv")
 
 # Display the data
-knitr::kable(summary_stats, caption = "Summary Statistics")
+knitr::kable(summary_stats, caption = "Summary Statistics", digits = 3)
 ```
 
 
