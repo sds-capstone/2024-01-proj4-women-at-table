@@ -221,13 +221,14 @@ in the region.
 
 In order to continue assessing and enhancing the fairness of the machine
 learning models, we use the same Global Findex Database as our
-colleagues before us. The Global Findex database was first launched in
-2011 by the World Bank---with funding from the Bill \& Melinda Gates
-Foundation. It is the world's most comprehensive data set on how adults
-save, borrow, make payments, and manage risk. The dataset contains over
-200 indicators including account ownership, payments, savings, credit,
-and financial resilience and has coverage over 140 nations, representing
-97\% of the world's population for year 2017, 2014, and 2011.
+colleagues before us\citep{Porta2022}. The Global Findex database was
+first launched in 2011 by the World Bank---with funding from the Bill \&
+Melinda Gates Foundation. It is the world's most comprehensive data set
+on how adults save, borrow, make payments, and manage risk. The dataset
+contains over 200 indicators including account ownership, payments,
+savings, credit, and financial resilience and has coverage over 140
+nations, representing 97\% of the world's population for year 2017,
+2014, and 2011\citep{Demirguc-Kunt2022}.
 
 The data was constructed through a series of surveys carried out by
 Gallup, Inc in association with the annual Gallup World Poll. They
@@ -259,15 +260,15 @@ The variable ``Fin24'' in the dataset asked participants the question:
 Now, imagine that you have an emergency and you need to pay {[}1/20 of
 GNI per capita in local currency{]}. Is it possible or not possible that
 you could come up with {[}1/20 of GNI per capita in local currency{]}
-within the NEXT MONTH? In order to make it more straightforward for
-interpretations, we restrict the response into a binary variable for Yes
-and No.~The overall distribution of access to emergency funds showed 17,
-599 individuals had access to emergency funds while 14342 did not. This
-indicates that over half of individuals represented in the data do not
-have access to emergency funds.
+within the NEXT MONTH\citep{Demirguc-Kunt2022}? In order to make it more
+straightforward for interpretations, we restrict the response into a
+binary variable for Yes and No.~The overall distribution of access to
+emergency funds showed 17,599 individuals had access to emergency funds
+while 14,342 did not. This indicates that over half of individuals
+represented in the data do not have access to emergency funds.
 
 To help conceptually understand how the outcome variables might vary
-among different levels of the variables, we chose 50\% as the benchmark
+among different levels of the variables, we chose 50 \% as the benchmark
 proportion for checking if the possibility of coming up with emergency
 funds for each variable group of interest is different from a random
 50/50 chance.
@@ -289,8 +290,8 @@ funds for each variable group of interest is different from a random
 Gender
 (female)}}{Protected Attribute of Focus: Gender (female)}}\label{protected-attribute-of-focus-gender-female}}
 
-The variable ``female'' distinguishes gender. There are 12108 females
-and 11663 males in the dataset. It appears to have a fair distribution
+The variable ``female'' distinguishes gender. There are 12,108 females
+and 11,663 males in the dataset. It appears to have a fair distribution
 between different genders for the dataset as a whole.
 
 \begin{figure}
@@ -896,8 +897,7 @@ determines who gets access to a loan.
 \end{figure}
 
 Second, we defined a function to analyze the correlation between the
-features in our dataset (with the help of this
-\href{https://www.youtube.com/watch?v=fzzUfa0-VsE}{Youtube video}).
+features in our dataset using a Youtube video \citep{ML_explained}.
 Since the majority of the features are categorical variables, we had to
 employ the chi-squared test to evaluate the statistical significance of
 the correlation between variables. In other words, the function informed
