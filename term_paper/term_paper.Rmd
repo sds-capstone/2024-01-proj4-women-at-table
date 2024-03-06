@@ -252,20 +252,32 @@ We visualized the characteristics of the population included in the data, throug
 
 After visualization, we decided to enhance our EDA with two statistical components. First, we ran logit regression with our binary outcome variable i.e. access to emergency funds. Our first regression specification in Fig EDA.1 shows that males have a 4.2 percentage points higher likelihood of having access to emergency funds than their female counterparts with statistical significance. This regression suffers from omitted variable bias (OVB) and we suspect that the impact of gender on access to emergency funds is underestimated. 
 
-``` {r, out.width='100%', fig.align='center', fig.cap='EDA Regression 1', echo=FALSE}
-     knitr::include_graphics('graphs/eda1.png')
+```{r echo=FALSE}
+# Read the CSV file
+logit1 <- read.csv("logit1_results.csv")
+
+# Display the data
+knitr::kable(logit1, caption = "Logit 1 Regression Results")
 ```
 
 In our second specification in Fig EDA.2 where we take into account the economy and education level features (which are the two other protected attributes that we explored), the likelihood of access to emergency funds is, on average, 34.75 percentage points higher for men with primary education from Benin than for comparable females with statistical significance. In other words, the reference category is an average male from Benin with primary education These results further emphasize that gender does have an impact on access to emergency funds where females are disadvantaged. Furthermore, these results emphasize that higher levels of education result in greater access of emergency funds with statistical significance, holding all else constant, which confirms our initial hypothesis.
 
-``` {r, out.width='100%', fig.align='center', fig.cap='EDA Regression 2', echo=FALSE}
-     knitr::include_graphics('graphs/eda2.png')
+```{r echo=FALSE}
+# Read the CSV file
+logit2 <- read.csv("logit2_results.csv")
+
+# Display the data
+knitr::kable(logit2, caption = "Logit 2 Regression Results")
 ```
 
 In our third specification in Fig EDA.3, we incorporate all the other financial features to control for them in the impact of gender on access to emergency funds and explore their impacts. We observe that unemployed men from Benin with primary education and in the first income quintile, on average, have a 14.45 percentage point higher likelihood than comparable females of access to emergency funds with statistical significance. Hence, we see that gender is still a statistically significant factor in determining access to emergency funds where females are disadvantaged. These logit regressions help to see that we may need to balance our data before training the algorithm that determines who gets access to a loan. 
 
-``` {r, out.width='100%', fig.align='center', fig.cap='EDA Regression 3', echo=FALSE}
-     knitr::include_graphics('graphs/eda3.png')
+```{r echo=FALSE}
+# Read the CSV file
+logit3 <- read.csv("logit3_results.csv")
+
+# Display the data
+knitr::kable(logit3, caption = "Logit 3 Regression Results")
 ```
 
 Second, we defined a function to analyze the correlation between the features in our dataset using a Youtube video [@ML_explained]. Since the majority of the features are categorical variables, we had to employ the chi-squared test to evaluate the statistical significance of the correlation between variables. In other words, the function informed us whether there is a correlation or not. However, the function would not show the strength and direction of the correlation. Not having this information was a limitation to potentially selecting proxy variables. Nonetheless, the yes/no correlation output was intuitive as we tested the correlation between gender and access to emergency funds. The output supported the results from the logit regressions that gender does have an impact on the access to emergency funds.
