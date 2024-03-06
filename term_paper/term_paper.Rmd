@@ -33,3 +33,53 @@ Defining fairness is essential since the concept itself is relative among differ
 Our previous colleagues conducted analysis using the \<AI & Equality\> Human Rights Toolbox and used a Decision Tree Classifier machine learning model implemented via Python to predict access to emergency funds with 68% accuracy. Their work laid a solid foundation by exploring demographic and financial variables within the dataset, and assessed the fairness of the decision tree classifier, particularly concerning gender bias, and then applied various processing techniques to enhance the fairness of the model[@Porta2022].
 
 Based on their work, our group aims to incorporate synthetic data to rebalance the dataset, ensuring equitable representations amongst both genders in the dataset. Our approach aims to consider a broader selection of machine learning algorithms and mitigate the disparities the previous colleagues found in the decision tree’s classifier’s predictions and enhance fairness with synthetic data, ultimately better predict access to emergency funds in south-Saharan Africa countries[@SyntheticDataAIEquality].
+
+# Background on Sub-Saharan Region
+# Load all the packages
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(gapminder)
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(readxl)
+library(leaflet)
+library(sf)
+library(RColorBrewer)
+
+gdpPercap <- read.csv("df_3.csv")
+
+# Filter for African countries and the year 2017
+gdpPercap_africa <- gdpPercap[gdpPercap$continent == "Africa" & gdpPercap$year == 2017, ]
+
+# Read the json to create the map
+map_geojson <- st_read("map_africa.json")
+map_geojson$name_long[24] <- "Cote d'Ivoire"
+map_geojson$name_long[11] <- "Congo, Dem. Rep."
+map_geojson$name_long[10] <- "Congo, Rep."
+map_geojson$name_long[10] <- "Congo, Rep."
+
+# Merge gapminder data with GeoJSON map data
+merged_data <- merge(map_geojson, gdpPercap_africa, by.x = "name_long", by.y = "country")
+
+# Assuming gdpPercap is a column in your merged_data
+map <- leaflet(merged_data) %>%
+  addTiles() %>%
+  addPolygons(
+    fillColor = ~colorQuantile("YlOrRd", merged_data$gdpPercap)(gdpPercap),
+    fillOpacity = 0.7,
+    weight = 1,
+    color = "white",
+    popup = ~paste("Country: ", sovereignt, "<br>GDP per Capita by income quantile: $", gdpPercap)
+  ) %>%
+  addLegend(
+    position = "bottomright",
+    pal = colorQuantile("YlOrRd", merged_data$gdpPercap),
+    values = merged_data$gdpPercap,
+    title = "GDP per Capita",
+    opacity = 1
+  )
+
+# Display the map
+map
+```
+
