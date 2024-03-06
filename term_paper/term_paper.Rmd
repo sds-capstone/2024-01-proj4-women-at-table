@@ -102,12 +102,16 @@ The data was constructed through a series of surveys carried out by Gallup, Inc 
 
 After basic data cleaning, we have created various visualizations to help understand who is in the data and acknowledge potential sources of bias within the data. 
 
+``` {r,echo=FALSE, fig.show='hold', out.width='50%'}
+  knitr::include_graphics('graphs/var1_graph.jpeg') 
+  knitr::include_graphics('graphs/var2_graph.jpeg')
+```
+
 *Outcome Variable of Interest: Access to Emergency Fund (Fin24)*
 
 The variable “Fin24” in the dataset asked participants the question: Now, imagine that you have an emergency and you need to pay [1/20 of GNI per capita in local currency]. Is it possible or not possible that you could come up with [1/20 of GNI per capita in local currency] within the NEXT MONTH? In order to make it more straightforward for interpretations, we restrict the response into a binary variable for Yes and No. The overall distribution of access to emergency funds showed 17, 599 individuals had access to emergency funds while 14342 did not. This indicates that over half of individuals represented in the data do not have access to emergency funds.
 
 To help conceptually understand how the outcome variables might vary among different levels of the variables, we chose 50% as the benchmark proportion for checking if the possibility of coming up with emergency funds for each variable group of interest is different from a random 50/50 chance.
-
 ``` {r, out.width='70%', fig.align='center', fig.cap='Distribution of having emergency fund', echo=FALSE}
      knitr::include_graphics('graphs/f24_graph1.png') 
 ```
@@ -115,58 +119,51 @@ To help conceptually understand how the outcome variables might vary among diffe
 *Protected Attribute of Focus: Gender (female)*
 
 The variable “female” distinguishes gender. There are 12108 females and 11663 males in the dataset. It appears to have a fair distribution between different genders for the dataset as a whole. 
-
-```{r, out.width='70%', fig.align='center', fig.cap='Distribution on gender', echo=FALSE, fig.show='hold'}
+```{r, out.width='100%', fig.align='center', fig.cap='Distribution on gender', echo=FALSE, fig.show='hold'}
      knitr::include_graphics('graphs/f24_graph2.png') 
 ```
 
-``` {r, out.width='70%', fig.align='center', fig.cap='Distribution of having emergency fund by gender', echo=FALSE}
+While it looks quite balanced in the previous figure, we observe a discrepancy between the two genders when compared against our outcome variable of interest. Females have a 15% lower chance of having access to emergency funds. 
+``` {r, out.width='100%', fig.align='center', fig.cap='Distribution of having emergency fund by gender', echo=FALSE}
      knitr::include_graphics('graphs/f24_graph3.png') 
 ```
-
-While it looks quite balanced in the previous figure, we observe a discrepancy between the two genders when compared against our outcome variable of interest. Females have a 15% lower chance of having access to emergency funds. 
 
 In order to investigate further into how discrepancy of gender plays into other predictor variables, we created visuals for contrasting the two genders. 
 
 *Education (educ)*
 
 The variable “educ” distinguishes education level among participants: 1 being the completed primary education or less, 2 being completed secondary education, and 3 being completed tertiary education. The majority in the dataset is participants with primary or less education (12523 participants). On the other hand, there are only 910 participants who have tertiary education. Overall, the discrepancy between education levels appears quite drastic, and might result in a varying prediction for access to emergency funds. If we break down education by gender,  we see that more females than males have primary or less education while the opposite for secondary or tertiary education. 
-
-``` {r, out.width='110%', fig.align='center', fig.cap='Distribution of education level', echo=FALSE}
+``` {r, out.width='100%', fig.align='center', fig.cap='Distribution by education level', echo=FALSE}
      knitr::include_graphics('graphs/f24_graph4.png') 
 ```
 
-When we consider gender and education with respect to the outcome variable of interest, we observe that tertiary education levels have the highest likelihood of access to emergency funds while primary education is the least likely. This discrepancy between education levels is reasonable since participants with tertiary education might have been more financially independent and have higher financial resilience, thus be more likely to have access to emergency funds. Nonetheless, we continue to observe that females have a lower access to emergency funds, among the same education level. It shows that gender imbalance is still evident when we position it in relationship to other predictors. 
-
-``` {r, out.width='110%', fig.align='center', fig.cap='Distribution of education level by gender', echo=FALSE}
+When we consider gender and education with respect to the outcome variable of interest, we observe that tertiary education levels have the highest likelihood of access to emergency funds while primary education is the least likely. 
+``` {r, out.width='100%', fig.align='center', fig.cap='Distribution of access to emergency funds by education level and gender', echo=FALSE}
      knitr::include_graphics('graphs/f24_graph5.png') 
 ```
+This discrepancy between education levels is reasonable since participants with tertiary education might have been more financially independent and have higher financial resilience, thus be more likely to have access to emergency funds. Nonetheless, we continue to observe that females have a lower access to emergency funds, among the same education level. It shows that gender imbalance is still evident when we position it in relationship to other predictors. 
+
 
 *Income Quantile (Inc_q)*
 
-The variable “inc_q” distinguishes the income quintile within an economy. It is separated into 5 quantiles with 1 being the poorest and 5 being the richest. Income quintile 5, or the richest 20%, is the largest quantile.  There are more male than females in the  richest 20% quintile, while females compose the majority of the poorest 20%, second poorest 20%, and middle 20%, which are the poorest quantiles. 
+The variable “inc_q” distinguishes the income quintile within an economy. It is separated into 5 quantiles with 1 being the poorest and 5 being the richest. Income quintile 5, or the richest 20%, is the largest quantile.  There are more male than females in the  richest 20% quintile, while females compose the majority of the poorest 20%, second poorest 20%, and middle 20%, which are the poorest quantiles.
 
-``` {r, out.width='110%', fig.align='center', fig.cap='Income Quantile Distribution', echo=FALSE}
+``` {r, out.width='100%', fig.align='center', fig.cap='Income Quantile Distribution', echo=FALSE}
      knitr::include_graphics('graphs/income_graph6.png') 
 ```
-
 We observe a similar gradient in access to emergency funds among the different income quintiles. This discrepancy is expected since participants with the level of income are directly related to financial stability and resilience. However, the gap between females and male is still concerning: male that are in the top two income quintile will have at least 50% chance of access to emergency funds, whereas only females that are the top 1 income quintile will have a comparable likelihood. 
-
-``` {r, out.width='110%', fig.align='center', fig.cap='Income Quantile Distribution by gender', echo=FALSE}
+``` {r, out.width='100%', fig.align='center', fig.cap='Distribution of access to emergency funds by income quantiile and gender', echo=FALSE}
      knitr::include_graphics('graphs/employ_graph7.png') 
 ```
 
 *Employment Status (emp_in)*
 
 Employment Status asks whether or not the participant is in the workforce. There are 16648 individuals who were in the workforce while 7123 were not, and more females are out of the workforce than males, thus suggesting that females are less likely to achieve economic independence than males. 
-
-``` {r, out.width='110%', fig.align='center', fig.cap='Employment Status Distribution by gender', echo=FALSE}
+``` {r, out.width='100%', fig.align='center', fig.cap='Distribution of employment status', echo=FALSE}
      knitr::include_graphics('graphs/employ_graph8.png')
 ```
-
 The disparity between females and male is quite alarming when we break it down by employment status. Regardless of the employment status, females do not even have a 50% chance of having access to emergency funds.
-
-``` {r, out.width='110%', fig.align='center', fig.cap='Employment Status  Distribution by gender', echo=FALSE}
+``` {r, out.width='100%', fig.align='center', fig.cap='Distribution of access to emergency funds by employment status and gender', echo=FALSE}
      knitr::include_graphics('graphs/employ_graph9.png')
 ```
 
@@ -175,8 +172,7 @@ The disparity between females and male is quite alarming when we break it down b
 The “economy” variable represents the country that the participants live in. There are 27 different countries from Sub-Saharan Africa with around 800-900 respondents each. The countries included are Benin, Botswana, Burkina Faso, Cameroon, Central African Republic, Chad, Congo Dem. Rep. Congo Rep., Côte d’Ivoire, Ethiopia, Gabon, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Mali, Mauritania, Mozambique, Namibia, Niger, Nigeria, Rwanda, Senegal, Sierra Leone, South Africa, South Sudan, Tanzania, Togo, Uganda, Zambia, and Zimbabwe.
 
 While looking at the outcome variable of interest broken down by country and gender, we see that Liberia has the highest proportion of both females and male having access to emergency funds, while Zambia has the lowest proportion of accessing emergency funds in both females and males. It’s also important to note that the difference between males and females is largest in countries like Botswana and Kenya. 
-
-``` {r, out.width='110%', fig.align='center', fig.cap='Distributions of Access to Emergency Funds by country and gender', echo=FALSE}
+``` {r, out.width='100%', fig.align='center', fig.cap='Distributions of Access to Emergency Funds by country and gender', echo=FALSE}
      knitr::include_graphics('graphs/country_graph10.png')
 ```
 

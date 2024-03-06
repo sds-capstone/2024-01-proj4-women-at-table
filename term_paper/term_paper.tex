@@ -259,6 +259,9 @@ After basic data cleaning, we have created various visualizations to
 help understand who is in the data and acknowledge potential sources of
 bias within the data.
 
+\includegraphics[width=0.5\linewidth]{graphs/var1_graph}
+\includegraphics[width=0.5\linewidth]{graphs/var2_graph}
+
 \emph{Outcome Variable of Interest: Access to Emergency Fund (Fin24)}
 
 The variable ``Fin24'' in the dataset asked participants the question:
@@ -284,7 +287,7 @@ funds for each variable group of interest is different from a random
 
 }
 
-\caption{Distribution of having emergency fund}\label{fig:unnamed-chunk-2}
+\caption{Distribution of having emergency fund}\label{fig:unnamed-chunk-3}
 \end{figure}
 
 \emph{Protected Attribute of Focus: Gender (female)}
@@ -295,26 +298,26 @@ between different genders for the dataset as a whole.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.7\linewidth]{graphs/f24_graph2} 
+{\centering \includegraphics[width=1\linewidth]{graphs/f24_graph2} 
 
 }
 
-\caption{Distribution on gender}\label{fig:unnamed-chunk-3}
-\end{figure}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{graphs/f24_graph3} 
-
-}
-
-\caption{Distribution of having emergency fund by gender}\label{fig:unnamed-chunk-4}
+\caption{Distribution on gender}\label{fig:unnamed-chunk-4}
 \end{figure}
 
 While it looks quite balanced in the previous figure, we observe a
 discrepancy between the two genders when compared against our outcome
 variable of interest. Females have a 15\% lower chance of having access
 to emergency funds.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{graphs/f24_graph3} 
+
+}
+
+\caption{Distribution of having emergency fund by gender}\label{fig:unnamed-chunk-5}
+\end{figure}
 
 In order to investigate further into how discrepancy of gender plays
 into other predictor variables, we created visuals for contrasting the
@@ -335,32 +338,34 @@ the opposite for secondary or tertiary education.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1.1\linewidth]{graphs/f24_graph4} 
+{\centering \includegraphics[width=1\linewidth]{graphs/f24_graph4} 
 
 }
 
-\caption{Distribution of education level}\label{fig:unnamed-chunk-5}
+\caption{Distribution by education level}\label{fig:unnamed-chunk-6}
 \end{figure}
 
 When we consider gender and education with respect to the outcome
 variable of interest, we observe that tertiary education levels have the
 highest likelihood of access to emergency funds while primary education
-is the least likely. This discrepancy between education levels is
-reasonable since participants with tertiary education might have been
-more financially independent and have higher financial resilience, thus
-be more likely to have access to emergency funds. Nonetheless, we
-continue to observe that females have a lower access to emergency funds,
-among the same education level. It shows that gender imbalance is still
-evident when we position it in relationship to other predictors.
+is the least likely.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1.1\linewidth]{graphs/f24_graph5} 
+{\centering \includegraphics[width=1\linewidth]{graphs/f24_graph5} 
 
 }
 
-\caption{Distribution of education level by gender}\label{fig:unnamed-chunk-6}
+\caption{Distribution of access to emergency funds by education level and gender}\label{fig:unnamed-chunk-7}
 \end{figure}
+
+This discrepancy between education levels is reasonable since
+participants with tertiary education might have been more financially
+independent and have higher financial resilience, thus be more likely to
+have access to emergency funds. Nonetheless, we continue to observe that
+females have a lower access to emergency funds, among the same education
+level. It shows that gender imbalance is still evident when we position
+it in relationship to other predictors.
 
 \emph{Income Quantile (Inc\_q)}
 
@@ -373,11 +378,11 @@ poorest 20\%, and middle 20\%, which are the poorest quantiles.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1.1\linewidth]{graphs/income_graph6} 
+{\centering \includegraphics[width=1\linewidth]{graphs/income_graph6} 
 
 }
 
-\caption{Income Quantile Distribution}\label{fig:unnamed-chunk-7}
+\caption{Income Quantile Distribution}\label{fig:unnamed-chunk-8}
 \end{figure}
 
 We observe a similar gradient in access to emergency funds among the
@@ -390,11 +395,11 @@ that are the top 1 income quintile will have a comparable likelihood.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1.1\linewidth]{graphs/employ_graph7} 
+{\centering \includegraphics[width=1\linewidth]{graphs/employ_graph7} 
 
 }
 
-\caption{Income Quantile Distribution by gender}\label{fig:unnamed-chunk-8}
+\caption{Distribution of access to emergency funds by income quantiile and gender}\label{fig:unnamed-chunk-9}
 \end{figure}
 
 \emph{Employment Status (emp\_in)}
@@ -407,11 +412,11 @@ independence than males.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1.1\linewidth]{graphs/employ_graph8} 
+{\centering \includegraphics[width=1\linewidth]{graphs/employ_graph8} 
 
 }
 
-\caption{Employment Status Distribution by gender}\label{fig:unnamed-chunk-9}
+\caption{Distribution of employment status}\label{fig:unnamed-chunk-10}
 \end{figure}
 
 The disparity between females and male is quite alarming when we break
@@ -421,11 +426,11 @@ funds.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1.1\linewidth]{graphs/employ_graph9} 
+{\centering \includegraphics[width=1\linewidth]{graphs/employ_graph9} 
 
 }
 
-\caption{Employment Status  Distribution by gender}\label{fig:unnamed-chunk-10}
+\caption{Distribution of access to emergency funds by employment status and gender}\label{fig:unnamed-chunk-11}
 \end{figure}
 
 \emph{Country (economy)}
@@ -448,11 +453,11 @@ females is largest in countries like Botswana and Kenya.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1.1\linewidth]{graphs/country_graph10} 
+{\centering \includegraphics[width=1\linewidth]{graphs/country_graph10} 
 
 }
 
-\caption{Distributions of Access to Emergency Funds by country and gender}\label{fig:unnamed-chunk-11}
+\caption{Distributions of Access to Emergency Funds by country and gender}\label{fig:unnamed-chunk-12}
 \end{figure}
 
 We iterate the visualizations for each main financial variable of
