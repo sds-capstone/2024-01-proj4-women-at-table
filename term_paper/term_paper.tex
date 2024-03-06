@@ -168,7 +168,7 @@ predict access to emergency funds in south-Saharan Africa
 countries\citep{SyntheticDataAIEquality}.
 
 \hypertarget{background-on-sub-saharan-region}{%
-\section{Background on Sub-Saharan
+\subsection{Background on Sub-Saharan
 Region}\label{background-on-sub-saharan-region}}
 
 Sub-Saharan Africa is a region characterized by a diverse economic
@@ -180,6 +180,12 @@ grappling with fragility or conflict, posing unique challenges to
 development efforts. Additionally, 13 small states within the region are
 characterized by limited human capital, modest populations, and
 constrained land areas {[}ADD CITATION{]}.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth,height=0.5\textheight]{images/access_by_educ_level.png}
+\caption{Access to Emergency Funds by Education Level}
+\end{figure}
 
 \begin{center}\includegraphics[width=0.7\linewidth]{graphs/map} \end{center}
 
@@ -254,7 +260,10 @@ bias within the data.
 \includegraphics[width=0.4\linewidth]{graphs/var1_graph}
 \includegraphics[width=0.4\linewidth]{graphs/var2_graph}
 
-\emph{Outcome Variable of Interest: Access to Emergency Fund (Fin24)}
+\hypertarget{outcome-variable-of-interest-access-to-emergency-fund-fin24}{%
+\subsubsection{\texorpdfstring{\emph{Outcome Variable of Interest:
+Access to Emergency Fund
+(Fin24)}}{Outcome Variable of Interest: Access to Emergency Fund (Fin24)}}\label{outcome-variable-of-interest-access-to-emergency-fund-fin24}}
 
 The variable ``Fin24'' in the dataset asked participants the question:
 Now, imagine that you have an emergency and you need to pay {[}1/20 of
@@ -282,7 +291,10 @@ funds for each variable group of interest is different from a random
 \caption{Distribution of having emergency fund}\label{fig:unnamed-chunk-4}
 \end{figure}
 
-\emph{Protected Attribute of Focus: Gender (female)}
+\hypertarget{protected-attribute-of-focus-gender-female}{%
+\subsubsection{\texorpdfstring{\emph{Protected Attribute of Focus:
+Gender
+(female)}}{Protected Attribute of Focus: Gender (female)}}\label{protected-attribute-of-focus-gender-female}}
 
 The variable ``female'' distinguishes gender. There are 12108 females
 and 11663 males in the dataset. It appears to have a fair distribution
@@ -315,7 +327,9 @@ In order to investigate further into how discrepancy of gender plays
 into other predictor variables, we created visuals for contrasting the
 two genders.
 
-\emph{Education (educ)}
+\hypertarget{education-educ}{%
+\subsubsection{\texorpdfstring{\emph{Education
+(educ)}}{Education (educ)}}\label{education-educ}}
 
 The variable ``educ'' distinguishes education level among participants:
 1 being the completed primary education or less, 2 being completed
@@ -359,7 +373,9 @@ females have a lower access to emergency funds, among the same education
 level. It shows that gender imbalance is still evident when we position
 it in relationship to other predictors.
 
-\emph{Income Quantile (Inc\_q)}
+\hypertarget{income-quantile-inc_q}{%
+\subsubsection{\texorpdfstring{\emph{Income Quantile
+(Inc\_q)}}{Income Quantile (Inc\_q)}}\label{income-quantile-inc_q}}
 
 The variable ``inc\_q'' distinguishes the income quintile within an
 economy. It is separated into 5 quantiles with 1 being the poorest and 5
@@ -394,7 +410,9 @@ that are the top 1 income quintile will have a comparable likelihood.
 \caption{Distribution of access to emergency funds by income quantiile and gender}\label{fig:unnamed-chunk-10}
 \end{figure}
 
-\emph{Employment Status (emp\_in)}
+\hypertarget{employment-status-emp_in}{%
+\subsubsection{\texorpdfstring{\emph{Employment Status
+(emp\_in)}}{Employment Status (emp\_in)}}\label{employment-status-emp_in}}
 
 Employment Status asks whether or not the participant is in the
 workforce. There are 16648 individuals who were in the workforce while
@@ -425,7 +443,9 @@ funds.
 \caption{Distribution of access to emergency funds by employment status and gender}\label{fig:unnamed-chunk-12}
 \end{figure}
 
-\emph{Country (economy)}
+\hypertarget{country-economy}{%
+\subsubsection{\texorpdfstring{\emph{Country
+(economy)}}{Country (economy)}}\label{country-economy}}
 
 The ``economy'' variable represents the country that the participants
 live in. There are 27 different countries from Sub-Saharan Africa with

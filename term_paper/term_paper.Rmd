@@ -28,9 +28,11 @@ Our previous colleagues conducted analysis using the \<AI & Equality\> Human Rig
 
 Based on their work, our group aims to incorporate synthetic data to rebalance the dataset, ensuring equitable representations amongst both genders in the dataset. Our approach aims to consider a broader selection of machine learning algorithms and mitigate the disparities the previous colleagues found in the decision tree’s classifier’s predictions and enhance fairness with synthetic data, ultimately better predict access to emergency funds in south-Saharan Africa countries[@SyntheticDataAIEquality].
 
-# Background on Sub-Saharan Region
+## Background on Sub-Saharan Region
 
 Sub-Saharan Africa is a region characterized by a diverse economic landscape, encompassing low, lower-middle, and upper-middle-income countries. Demographically, Sub-Saharan Africa is marked by a rich tapestry of cultures and a population exceeding 1.2 billion people. This expansive and diverse demographic landscape includes 22 countries grappling with fragility or conflict, posing unique challenges to development efforts. Additionally, 13 small states within the region are characterized by limited human capital, modest populations, and constrained land areas [ADD CITATION]. 
+
+![Access to Emergency Funds by Education Level](images/access_by_educ_level.png){width=75%, height=50%}
 
 ``` {r,echo=FALSE, fig.align='center', fig.show='hold', out.width='70%'}
   knitr::include_graphics('graphs/map.png') 
@@ -104,7 +106,7 @@ After basic data cleaning, we have created various visualizations to help unders
   knitr::include_graphics('graphs/var2_graph.jpeg')
 ```
 
-*Outcome Variable of Interest: Access to Emergency Fund (Fin24)*
+### *Outcome Variable of Interest: Access to Emergency Fund (Fin24)*
 
 The variable “Fin24” in the dataset asked participants the question: Now, imagine that you have an emergency and you need to pay [1/20 of GNI per capita in local currency]. Is it possible or not possible that you could come up with [1/20 of GNI per capita in local currency] within the NEXT MONTH? In order to make it more straightforward for interpretations, we restrict the response into a binary variable for Yes and No. The overall distribution of access to emergency funds showed 17, 599 individuals had access to emergency funds while 14342 did not. This indicates that over half of individuals represented in the data do not have access to emergency funds.
 
@@ -113,7 +115,7 @@ To help conceptually understand how the outcome variables might vary among diffe
      knitr::include_graphics('graphs/f24_graph1.png') 
 ```
 
-*Protected Attribute of Focus: Gender (female)*
+### *Protected Attribute of Focus: Gender (female)*
 
 The variable “female” distinguishes gender. There are 12108 females and 11663 males in the dataset. It appears to have a fair distribution between different genders for the dataset as a whole. 
 ```{r, out.width='100%', fig.align='center', fig.cap='Distribution on gender', echo=FALSE, fig.show='hold'}
@@ -127,7 +129,7 @@ While it looks quite balanced in the previous figure, we observe a discrepancy b
 
 In order to investigate further into how discrepancy of gender plays into other predictor variables, we created visuals for contrasting the two genders. 
 
-*Education (educ)*
+### *Education (educ)*
 
 The variable “educ” distinguishes education level among participants: 1 being the completed primary education or less, 2 being completed secondary education, and 3 being completed tertiary education. The majority in the dataset is participants with primary or less education (12523 participants). On the other hand, there are only 910 participants who have tertiary education. Overall, the discrepancy between education levels appears quite drastic, and might result in a varying prediction for access to emergency funds. If we break down education by gender,  we see that more females than males have primary or less education while the opposite for secondary or tertiary education. 
 ``` {r, out.width='100%', fig.align='center', fig.cap='Distribution by education level', echo=FALSE}
@@ -141,7 +143,7 @@ When we consider gender and education with respect to the outcome variable of in
 This discrepancy between education levels is reasonable since participants with tertiary education might have been more financially independent and have higher financial resilience, thus be more likely to have access to emergency funds. Nonetheless, we continue to observe that females have a lower access to emergency funds, among the same education level. It shows that gender imbalance is still evident when we position it in relationship to other predictors. 
 
 
-*Income Quantile (Inc_q)*
+### *Income Quantile (Inc_q)*
 
 The variable “inc_q” distinguishes the income quintile within an economy. It is separated into 5 quantiles with 1 being the poorest and 5 being the richest. Income quintile 5, or the richest 20%, is the largest quantile.  There are more male than females in the  richest 20% quintile, while females compose the majority of the poorest 20%, second poorest 20%, and middle 20%, which are the poorest quantiles.
 
@@ -153,7 +155,7 @@ We observe a similar gradient in access to emergency funds among the different i
      knitr::include_graphics('graphs/employ_graph7.png') 
 ```
 
-*Employment Status (emp_in)*
+### *Employment Status (emp_in)*
 
 Employment Status asks whether or not the participant is in the workforce. There are 16648 individuals who were in the workforce while 7123 were not, and more females are out of the workforce than males, thus suggesting that females are less likely to achieve economic independence than males. 
 ``` {r, out.width='100%', fig.align='center', fig.cap='Distribution of employment status', echo=FALSE}
@@ -164,7 +166,7 @@ The disparity between females and male is quite alarming when we break it down b
      knitr::include_graphics('graphs/employ_graph9.png')
 ```
 
-*Country (economy)*
+### *Country (economy)*
 
 The “economy” variable represents the country that the participants live in. There are 27 different countries from Sub-Saharan Africa with around 800-900 respondents each. The countries included are Benin, Botswana, Burkina Faso, Cameroon, Central African Republic, Chad, Congo Dem. Rep. Congo Rep., Côte d’Ivoire, Ethiopia, Gabon, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Mali, Mauritania, Mozambique, Namibia, Niger, Nigeria, Rwanda, Senegal, Sierra Leone, South Africa, South Sudan, Tanzania, Togo, Uganda, Zambia, and Zimbabwe.
 
