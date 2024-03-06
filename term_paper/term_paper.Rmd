@@ -30,11 +30,15 @@ Based on their work, our group aims to incorporate synthetic data to rebalance t
 
 # Background on Sub-Saharan Region
 
-Sub-Saharan Africa is a region characterized by a diverse economic landscape, encompassing low, lower-middle, and upper-middle-income countries. Demographically, Sub-Saharan Africa is marked by a rich tapestry of cultures and a population exceeding 1.2 billion people. This expansive and diverse demographic landscape includes 22 countries grappling with fragility or conflict, posing unique challenges to development efforts. Additionally, 13 small states within the region are characterized by limited human capital, modest populations, and constrained land areas. 
+Sub-Saharan Africa is a region characterized by a diverse economic landscape, encompassing low, lower-middle, and upper-middle-income countries. Demographically, Sub-Saharan Africa is marked by a rich tapestry of cultures and a population exceeding 1.2 billion people. This expansive and diverse demographic landscape includes 22 countries grappling with fragility or conflict, posing unique challenges to development efforts. Additionally, 13 small states within the region are characterized by limited human capital, modest populations, and constrained land areas [ADD CITATION]. 
 
-According to the World Bank's definition, middle-income countries had a per capita gross national income of more than US$995.00 in the years 2015–17. Among the 35 countries included in our dataset, 20 are classified as low-income countries, and 15 are classified as middle-income countries. Additionally, 11 are classified as countries in Fragile and Conflict-Affected Situations, which, by definition, have experienced a peacekeeping or peace-building mission within the last three years.
+``` {r,echo=FALSE, fig.align='center', fig.show='hold', out.width='70%'}
+  knitr::include_graphics('graphs/map.png') 
+```
 
-Sub-Saharan African countries not only differ in terms of economic prosperity but also in economic structure and resource intensity. Resource-intensive countries include both oil-exporting nations, where net oil exports make up 30 percent or more of total exports, and commodity exporters, where nonrenewable natural resources represent 25 percent or more of total exports. The divergence between resource-intensive and non-resource-intensive countries became more entrenched following the commodity price shock of 2015. Non-resource-intensive countries have proven more resilient, supported by their more diversified economies. On the other hand, resource-intensive economies generally have a less diversified structure, making them more susceptible to external shocks. In our dataset, 6 of the countries are oil exporters, and 11 export other commodities such as iron ore, copper, cotton, coffee, and sugar. The remaining 18 countries are non-resource-intensive and their economies are not reliant on exports.
+According to the World Bank's definition, middle-income countries had a per capita gross national income of more than US$995.00 in the years 2015–17 [ADD CITATION]. Among the 35 countries included in our dataset, 20 are classified as low-income countries, and 15 are classified as middle-income countries. Additionally, 11 are classified as countries in Fragile and Conflict-Affected Situations, which, by definition, have experienced a peacekeeping or peace-building mission within the last three years.
+
+Sub-Saharan African countries not only differ in terms of economic prosperity but also in economic structure and resource intensity. Resource-intensive countries include both oil-exporting nations, where net oil exports make up 30 percent or more of total exports, and commodity exporters, where nonrenewable natural resources represent 25 percent or more of total exports. The divergence between resource-intensive and non-resource-intensive countries became more entrenched following the commodity price shock of 2015 [ADD CITATION]. Non-resource-intensive countries have proven more resilient, supported by their more diversified economies. On the other hand, resource-intensive economies generally have a less diversified structure, making them more susceptible to external shocks. In our dataset, 6 of the countries are oil exporters, and 11 export other commodities such as iron ore, copper, cotton, coffee, and sugar. The remaining 18 countries are non-resource-intensive and their economies are not reliant on exports.
 
 In recent years, the Sub-Saharan Africa region has grappled with significant economic challenges, including soaring inflation, pronounced exchange rate pressures, debt vulnerabilities, and widening economic disparities within the region. Therefore, addressing these structural and economic disparities is imperative for tackling developmental issues in the region.
 
@@ -85,7 +89,6 @@ map <- leaflet(merged_data) %>%
 map
 ```
 
-
 # Data
 
 In order to continue assessing and enhancing the fairness of the machine learning models, we use the same Global Findex Database as our colleagues before us. The Global Findex database was first launched in 2011 by the World Bank—with funding from the Bill & Melinda Gates Foundation. It is the world’s most comprehensive data set on how adults save, borrow, make payments, and manage risk. The dataset contains over 200 indicators including account ownership, payments, savings, credit, and financial resilience and has coverage over 140 nations, representing 97% of the world's population for year 2017, 2014, and 2011. 
@@ -96,7 +99,7 @@ The data was constructed through a series of surveys carried out by Gallup, Inc 
 
 After basic data cleaning, we have created various visualizations to help understand who is in the data and acknowledge potential sources of bias within the data. 
 
-``` {r,echo=FALSE, fig.show='hold', out.width='50%'}
+``` {r,echo=FALSE, fig.show='hold', out.width='40%'}
   knitr::include_graphics('graphs/var1_graph.jpeg') 
   knitr::include_graphics('graphs/var2_graph.jpeg')
 ```
